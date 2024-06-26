@@ -1,0 +1,3 @@
+Important points:
+1. '.gitignore' file is created so that I can check my packages and all without commiting to github.
+2. 'setup.py' file is created so that my ML model is used as a package just as pandas, numpy, etc.
