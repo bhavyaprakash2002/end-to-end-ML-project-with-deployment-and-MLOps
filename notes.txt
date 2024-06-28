@@ -1,10 +1,6 @@
 Important points:
 1. '.gitignore' file is created so that I can check my packages and all without commiting to github.
-<<<<<<< HEAD
 2. 'setup.py' file is created so that my ML model is used as a package just as pandas, numpy, etc.
 3. 'components' folder will basically have all the steps in the pipeline that is going to be implemented such as data ingestion, data preprocessing, etc.
 4. 'utils.py' file consists of code that will help in basic things like picking up data from MongoDb or deploying code to cloud, etc.
 5. 'exceptions.py' is created to handle any kind of exceptions. I am writing my own custom error handling.
-=======
-2. 'setup.py' file is created so that my ML model is used as a package just as pandas, numpy, etc.
->>>>>>> d423025 (setup.py and requirements)
