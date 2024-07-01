@@ -68,6 +68,9 @@ from src.logger import logging
 from src.components.data_preprocessing import DataTransformation
 from src.components.data_preprocessing import DataTransformationConfig
 
+from src.components.model_trainer import model_trainer_config
+from src.components.model_trainer import model_training
+
 import pandas as pd
 
 from sklearn.model_selection import train_test_split
@@ -115,6 +118,10 @@ class DataIngestion:
 if __name__=="__main__":
     obj=DataIngestion()
     train_data,test_data = obj.initiate_data_ingestion()
+
     data_transformation = DataTransformation()
-    data_transformation.initiate_data_transformation(train_data,test_data)
+    train_arr, test_arr,_ = data_transformation.initiate_data_transformation(train_data,test_data)
+
+    model_training = model_training()
+    print(model_training.initiate_model_trainer(train_arr, test_arr))
 
