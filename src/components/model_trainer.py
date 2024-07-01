@@ -41,7 +41,15 @@ class model_training:
                 
             }
 
-            model_report:dict = model_evaluate(x_train = x_train, y_train = y_train, x_test = x_test, y_test = y_test, models = models)
+            params = {
+                'linear_regression' : {},
+                'KNN' : {'n_neighbors' : [2,4,6,8]},
+                'Decision_tree' : {'max_depth':[4,6,8,10,12]},
+                'random_forest' : {'n_estimators' : [8,16,32,64,128,256]},
+                'xgboost' : {'learning_rate' : [0.01,0.1,0.05,0.001]}
+            }
+
+            model_report:dict = model_evaluate(x_train = x_train, y_train = y_train, x_test = x_test, y_test = y_test, models = models, params = params)
             best_model_score = min(model_report.values())
             
             best_model_name = list(model_report.keys())[
